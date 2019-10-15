@@ -51,4 +51,4 @@ sudo systemctl enable tesla-apiscraper.service
 
 # Add pi or any other user you would like to the Docker Group
 usermod -aG docker $(id -u -n)
-reboot
+# reboot
