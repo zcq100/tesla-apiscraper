@@ -2,7 +2,7 @@
 
 > Putting an end to handing out the Key for your >$100k car to a third party you don't know.
 
-Selfhosted API Scraper for pulling Vehicle Telemetry from the Tesla Owner API into an InfluxDB visualisation on Grafana Dashboards.
+Selfhosted API Scraper for pulling Vehicle Telemetry from the Tesla Owner API into an InfluxDB visualisation on Grafana Dashboards. Modified for Hass.io: "Scraper Only". Hass.io already provided images for InfluxDB and Grafana.
 
 Known to work with Model S, X and 3. Capable of handling multiple Vehicles in one Tesla Account
 
@@ -35,13 +35,13 @@ docker-compose build apiscraper
 docker-compose up -d
 ```
 
-## HASS.IO Influxin DB Settings
+## HASS.IO InfluxDB Settings
 
-In HASS.IO, open the InfluxDB webadmin and create a databse named tesla. Conigure user and password. Open config.py in the tesla-apiscraper folder and enter the details in the configuration file.
+In HASS.IO, open the InfluxDB webadmin and create a database named tesla. Configure a user and password. Grant the user correct access.  Open config.py in the tesla-apiscraper folder and enter the details in the configuration file.
 
 ## HASS.IO Grafana Plugin Settings
 
-In the Grafansa Plug in Config, make sure the followugin Grafan plugins are loaded:
+In the Grafansa Plugin Config, make sure the followugin Grafan plugins are loaded:
 
 ```{
   "ssl": true,
