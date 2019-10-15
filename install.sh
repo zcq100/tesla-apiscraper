@@ -28,9 +28,9 @@ sed -i "s/Users=pi/Users=$(id -u -n)/g" ./tesla-apiscraper.service
 touch apiscraper.log
 
 # Create Directories for persistent Data:
-mkdir -p data/influxdb
-mkdir -p data/grafana
-sudo chown 472 data/grafana
+# mkdir -p data/influxdb
+# mkdir -p data/grafana
+# sudo chown 472 data/grafana
 
 # Install docker/docker-compose if not exists
 if ! hash docker 2>/dev/null; then
