@@ -22,9 +22,7 @@ git clone https://github.com/mel0en/tesla-apiscraper.git && cd tesla-apiscraper 
 
 ## Usage
 
-After the install you can reach the scraper at http://localhost:3000
-
-Default u/p is admin/admin
+After the install you can reach the scraper at http://localhost:8023
 
 Both logfile (apiscraper.log) and the config file (config.py) are mapped outside the Docker container, so you can view / change these whenever you'd like. After changing, just restart the container.
 
@@ -37,16 +35,41 @@ docker-compose build apiscraper
 docker-compose up -d
 ```
 
-## Migrate from lephisto/tesla-apiscraper to lunars/tesla-apiscraper
+## HASS.IO Influxin DB Settings
 
-If you're coming from the original repo, you can just update your instance to Lunars
+In HASS.IO, open the InfluxDB webadmin and create a databse named tesla. Conigure user and password. Open config.py in the tesla-apiscraper folder and enter the details in the configuration file.
 
-```bash
-git remote rename origin upstream
-git remote add origin https://github.com/Lunars/tesla-apiscraper.git
-git branch --set-upstream-to origin/master master
-git pull
-```
+## HASS.IO Grafana Plugin Settings
+
+In the Grafansa Plug in Config, make sure the followugin Grafan plugins are loaded:
+
+'''{
+  "ssl": true,
+  "certfile": "fullchain.pem",
+  "keyfile": "privkey.pem",
+  "plugins": [
+    "natel-discrete-panel",
+    "pr0ps-trackmap-panel"
+  ],
+  "env_vars": []
+}
+'''
+
+## HASS.IO Grafana Data Source
+
+Configure a datasource in Grafana with the following details:
+
+Type: InfluxDB
+Name: Tesla
+URL: http://a0d7b954-influxdb:8086
+Access: Server
+Database: tesla
+User: <<what you configured>>
+Password <<what you configured>>
+
+## HASS.IO Grafana Dashboards
+
+The dashboards can be imported manually by importing the json files from the grafana-dashboards folder.
 
 ## Known Limitations and issues
 
@@ -64,14 +87,10 @@ git pull
 
 ## Roadmap
 
-- Multithreaded statpulling
-- Code Cleanup (feel free to send PR :)
-- Move from influxql to it's successor flux, the upcoming query language for InfluxDB
-- Write some Tickscripts for alerting
-- Have a color gradient on geolocation that reflects any metric like speed for instance
-- Improve sleepinitiation
+None
 
 ## Credits
 
+- Lephisto for the original api-scraper and Lunars for the energy saving version.
 - Tesla API Interface forked from Greg Glockner https://github.com/gglockner/teslajson (removed pulling Tesla API Credentials from a pastebin whish seemed fishy..)
 - Things stolen from basic Script from cko from the german tff-forum.de
