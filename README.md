@@ -37,7 +37,7 @@ docker-compose up -d
 
 ## HASS.IO InfluxDB Settings
 
-In HASS.IO, open the InfluxDB webadmin and create a database named tesla. Configure a user and password. Grant the user correct access.  Open config.py in the tesla-apiscraper folder and enter the details in the configuration file.
+In HASS.IO, open the InfluxDB webadmin and create a database named tesla. Configure a user and password. Grant the user correct access.  Open config.py in the tesla-apiscraper folder and adjust the InfluxDB details at the bottom of the configuration file.
 
 ## HASS.IO Grafana Plugin Settings
 
@@ -55,7 +55,7 @@ In the Grafansa Plugin Config, make sure the followugin Grafan plugins are loade
 }
 ```
 
-## HASS.IO Grafana Data Source
+## Hass.io Grafana Data Source
 
 Configure a datasource in Grafana with the following details:
 
@@ -68,7 +68,7 @@ User: <<what you configured>>
 Password <<what you configured>>
 ```
 
-## HASS.IO Grafana Dashboards
+## Hass.io Grafana Dashboards
 
 The dashboards can be imported manually by importing the json files from the grafana-dashboards folder.
 
@@ -92,6 +92,6 @@ None
 
 ## Credits
 
-- Lephisto for the original api-scraper and Lunars for the energy saving version.
+- Lephisto for the original api-scraper (https://github.com/lephisto/tesla-apiscraper) and Lunars (https://github.com/lunars/tesla-apiscraper) for the modified version which let the car go in sleep mode.
 - Tesla API Interface forked from Greg Glockner https://github.com/gglockner/teslajson (removed pulling Tesla API Credentials from a pastebin whish seemed fishy..)
 - Things stolen from basic Script from cko from the german tff-forum.de
