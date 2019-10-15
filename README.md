@@ -43,7 +43,7 @@ In HASS.IO, open the InfluxDB webadmin and create a databse named tesla. Conigur
 
 In the Grafansa Plug in Config, make sure the followugin Grafan plugins are loaded:
 
-'''{
+```{
   "ssl": true,
   "certfile": "fullchain.pem",
   "keyfile": "privkey.pem",
@@ -53,7 +53,7 @@ In the Grafansa Plug in Config, make sure the followugin Grafan plugins are load
   ],
   "env_vars": []
 }
-'''
+```
 
 ## HASS.IO Grafana Data Source
 
