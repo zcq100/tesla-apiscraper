@@ -41,7 +41,7 @@ if ! hash docker-compose 2>/dev/null; then
 fi
 
 # Start Docker Stack
-./dashboard2docker.sh
+# ./dashboard2docker.sh
 docker-compose up -d
 
 # Make the scraper start start on boot
