@@ -10,7 +10,7 @@ Known to work with Model S, X and 3. Capable of handling multiple Vehicles in on
 
 ## Install
 
-Paste the following in your terminal
+Paste the following in your terminal. The script assumes you are in /home/pi.
 
 ```bash
 # Enter your email and password to your tesla.com account
