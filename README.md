@@ -59,13 +59,14 @@ In the Grafansa Plug in Config, make sure the followugin Grafan plugins are load
 
 Configure a datasource in Grafana with the following details:
 
-Type: InfluxDB
+```Type: InfluxDB
 Name: Tesla
 URL: http://a0d7b954-influxdb:8086
 Access: Server
 Database: tesla
 User: <<what you configured>>
 Password <<what you configured>>
+```
 
 ## HASS.IO Grafana Dashboards
 
