@@ -12,3 +12,4 @@ hgt/*.downloading
 provisioning/dashboards/*.json
 provisioning/dashboards/*.bak
 data/*
+srtm.*
