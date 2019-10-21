@@ -305,7 +305,7 @@ class StateMonitor(object):
                     interval = 1
                     any_change = True
 
-        except (HTTPError, URLError) as exc:
+        except (HTTPError, URLError,ConnectionError) as exc:
             logger.info("HTTP Error: " + str(exc))
 
             if a_allow_sleep == 1:

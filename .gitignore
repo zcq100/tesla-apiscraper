@@ -5,6 +5,7 @@ master.zip
 *.pyc
 *.log
 .idea
+.vscode
 hgt/*.zip
 hgt/*.hgt
 hgt/*.downloading
